@@ -88,14 +88,22 @@ void montarArvore(int pontos[TF][TD],int inicio, int fim, int n, KdTree **raiz){
 	if(inicio<=fim){
 		ordenar(pontos,inicio,fim,n);
 		printarCoordenadas(pontos,inicio,fim,n);
+		printf("\n\nO que sera inserido: (%d, %d)\n",pontos[meio][0],pontos[meio][1]);
 		fflush(stdin);
 		getch();
 		inserirR(&*raiz,pontos[meio],0);
-		montarArvore(pontos,inicio,meio-1,(n+1)%2,&raiz);
-		montarArvore(pontos,meio+1,fim,(n+1)%2,&raiz);
+		montarArvore(pontos,inicio,meio-1,(n+1)%2,&*raiz);
+		montarArvore(pontos,meio+1,fim,(n+1)%2,&*raiz);
 	}
 	
 	//printarCoordenadas(pontos,inicio,fim,n);
+}
+
+void constroiGrafico(KdTree *raiz){
+	system("cls");
+	bordas(1,1,101,31)
+	fflush(stdin);
+	getch();
 }
 
 void executar(){
@@ -105,6 +113,11 @@ void executar(){
 	tl=qtdPontos();
 	gerarPontos(pontos,tl);
 	montarArvore(pontos,0,tl-1,0,&raiz);
+	system("cls");
+	exibeArvore(raiz,-1);
+	fflush(stdin);
+	getch();
+	constroiGrafico(raiz);
 }
 
 int main(){

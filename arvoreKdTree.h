@@ -26,3 +26,15 @@ void inserirR(KdTree **raiz,int pontos[TD],int n){
 	else
 		novoNo(&*raiz,pontos);
 }
+
+void exibeArvore(KdTree *raiz, int n){
+	int i;
+	if(raiz!=NULL){
+		n++;
+		exibeArvore(raiz->dir,n);
+		for(i=0;i<5*n;i++)
+			printf(" ");
+		printf("(%d, %d)\n",raiz->pontos[0],raiz->pontos[1]);
+		exibeArvore(raiz->esq,n);
+	}
+}
