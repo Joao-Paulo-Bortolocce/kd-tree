@@ -110,6 +110,25 @@ void Limpar(int ci, int li, int cf, int lf, int corTexto){
  	textcolor(7);	
 }
 
+void tracoH(int ci,int cf,int l){
+	int i;
+	for(i=ci; i<=cf; i++) {
+		gotoxy(i, l);
+		printf("%c", 205);
+
+	}
+	
+	
+}
+
+void tracoV(int li,int lf,int c){
+	int i;
+	for(i=li; i<lf; i++) {
+			gotoxy(c, i);
+			printf("%c", 186);
+	}	
+}
+
 void Moldura()
 {
 	int i;

@@ -38,3 +38,11 @@ void exibeArvore(KdTree *raiz, int n){
 		exibeArvore(raiz->esq,n);
 	}
 }
+
+void mataArvore(KdTree **raiz){
+	if(*raiz!=NULL){
+		mataArvore(&(*raiz)->esq);
+		mataArvore(&(*raiz)->dir);
+		free(*raiz);
+	}
+}
