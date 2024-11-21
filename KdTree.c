@@ -167,8 +167,6 @@ void constroiGrafico(KdTree *raiz){
 	printf("100");
 	printaPonto(raiz,raiz,0,ci,li,raiz);
 	Bordas(ci,li,cf,lf,3);
-	fflush(stdin);
-	getch();
 }
 
 int distancia(int ponto[TD]){
@@ -229,8 +227,8 @@ void executar(){
 	montarArvore(pontos,0,tl-1,0,&raiz);
 	system("cls");
 	constroiGrafico(raiz);
-	gotoxy(1,35);
-	exibeArvore(raiz,-1);
+	printaEmPe(raiz,36,10);
+	textcolor(7);
 	fflush(stdin);
 	getch();
 	system("cls");
